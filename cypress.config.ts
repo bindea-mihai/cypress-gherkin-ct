@@ -7,5 +7,10 @@ export default defineConfig({
       bundler: "webpack",
     },
     specPattern: "**/*.cy.ts",
+    setupNodeEvents(on, config) {
+      require('@cypress/code-coverage/task')(on, config)
+
+      return config
+    },
   },
 });
