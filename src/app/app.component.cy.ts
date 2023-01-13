@@ -6,4 +6,11 @@ describe('ApplicationListComponent', () => {
       declarations: [AppComponent],
     });
   });
+
+  it('should load the component name', () => {
+    cy.mount(AppComponent, {
+      declarations: [AppComponent]
+    });
+    cy.get('[data-cy="get-comp-name"]').click();
+  });
 });
